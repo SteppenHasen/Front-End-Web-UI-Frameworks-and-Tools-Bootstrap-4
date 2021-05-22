@@ -1,0 +1,21 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.jumbotron {
+    background: #a23ddd;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.footer {
+    background: #daa9f7;
+    padding: 20px 0 20px 0;
+}
+
+#content_text, #title, #description {padding: 20px 10px 20px 10px;}
+
