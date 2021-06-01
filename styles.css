@@ -28,9 +28,14 @@ body {
     padding: 5px 5px 0 0;
 }
 .form-check-label {padding: 0 10px 0 0;
-
 }
 .card-header {background: #f15c17;}
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
 
 #content_text, #title, #description {padding: 20px 10px 20px 10px;}
 #reserve_table {background: #f15c17;}
