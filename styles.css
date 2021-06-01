@@ -52,3 +52,5 @@ body {
 #content_text, #title, #description {padding: 20px 10px 20px 10px;}
 #reserve_table {background: #f15c17;}
 #reserve_form {margin: 10px 0 10px 0;}
+input[type='radio']:checked:after {background-color: #007c00;}
+input[type='radio']:after {background-color: #960303;}
