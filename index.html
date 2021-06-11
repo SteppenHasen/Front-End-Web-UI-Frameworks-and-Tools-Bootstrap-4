@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <title>Ristorante Con Fusion: About Us</title>
 </head>
@@ -216,12 +216,9 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
-
-                        <div class="btn-group" id="carouselButton">
-                            <button class="btn btn-danger btn-sm" id="carouselButton">
-                                <span id="carousel-button-icon" class="fa fa-pause"></span>
-                            </button>
-                        </div>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id="carousel-button-icon" class="fa fa-pause"></span>
+                        </button>
                     </div>
                 </div>
              </div>
@@ -277,6 +274,7 @@
     <script>
         $(document).ready(function(){
             $("#carouselButton").click(function(){
+                $("#mycarousel").carousel( { interval: 2000 } );
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
                     $("#carouselButton").children("span").removeClass('fa-pause');
