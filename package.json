@@ -1,0 +1,28 @@
+{
+  "name": "front-end-web-ui-frameworks-and-tools-bootstrap-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-social": "^5.1.1",
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -o css/ css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteppenHasen/Front-End-Web-UI-Frameworks-and-Tools-Bootstrap-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteppenHasen/Front-End-Web-UI-Frameworks-and-Tools-Bootstrap-4/issues"
+  },
+  "homepage": "https://github.com/SteppenHasen/Front-End-Web-UI-Frameworks-and-Tools-Bootstrap-4#readme"
+}
