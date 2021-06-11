@@ -1,3 +1,13 @@
+.modal-body {
+  background-color: #D1C4E9;
+}
+.modal-header {
+  background-color: #512DA8;
+  color: floralwhite;
+}
+.modal-header .close {
+  color: floralwhite;
+}
 .row-header {
   margin: 0px auto;
   padding: 0px 0px;
@@ -54,4 +64,16 @@ body {
   position: absolute;
   bottom: 0px;
   z-index: 1;
+}
+.reservebtns {
+  margin-left: 200px;
+}
+.customisation {
+  margin-left: 15px;
+}
+.customisation label {
+  padding-right: 5px;
+}
+.nav-item span {
+  margin-right: 5px;
 }
