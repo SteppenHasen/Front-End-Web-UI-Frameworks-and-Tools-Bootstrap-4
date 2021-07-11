@@ -1,0 +1,12 @@
+img {
+    border-radius: 50%;
+    border: 0;
+    margin: 5px;
+}
+.description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+mat-list-item p {margin-top: auto;}
