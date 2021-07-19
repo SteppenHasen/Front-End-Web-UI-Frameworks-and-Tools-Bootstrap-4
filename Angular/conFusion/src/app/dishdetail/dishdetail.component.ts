@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Comment } from '../shared/comment_form'
+import { Comment } from '../shared/comment'
 
 @Component({
   selector: 'app-dishdetail',

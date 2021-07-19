@@ -21,6 +21,7 @@
   "dependencies": {
     "@angular/core": "^6.1.7",
     "ajv": "^6.9.1",
+    "angular-material-styles": "^1.1.21",
     "font-awesome": "^4.7.0"
   }
 }
