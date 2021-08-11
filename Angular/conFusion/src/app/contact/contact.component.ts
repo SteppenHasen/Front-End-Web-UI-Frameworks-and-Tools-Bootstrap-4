@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FeedbackService } from '../services/feedback.service';
 
 import { Feedback, ContactType } from '../shared/feedback';
 import { flyInOut, expand } from '../animations/app.animation';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-contact',
@@ -14,17 +16,33 @@ import { flyInOut, expand } from '../animations/app.animation';
     'style': 'display: block;'
     },
     animations: [
+      trigger('visibility', [
+        state('shown', style({
+            transform: 'scale(1.0)',
+            opacity: 1
+        })),
+        state('hidden', style({
+            transform: 'scale(0.5)',
+            opacity: 0
+        })),
+        transition('* => *', animate('0.5s ease-in-out'))
+      ]),
       flyInOut(),
       expand()
     ]
 })
 export class ContactComponent implements OnInit {
 
+  dishErrMess: string;
+
   @ViewChild('fform') feedbackFormDirective;
 
   feedbackForm: FormGroup;
   feedback: Feedback;
+  feedbackcopy: Feedback;
   contactType = ContactType;
+
+  visibility = 'shown';
 
   formErrors = {
     'firstname': '',
@@ -54,11 +72,13 @@ export class ContactComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private feedbackservice: FeedbackService) {
     this.createForm();
   }
 
   ngOnInit() {
+    
   }
 
   createForm() {
@@ -79,19 +99,12 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: '',
-      email: '',
-      agree: false,
-      contacttype: 'None',
-      message: ''
-    });
-    this.feedbackFormDirective.resetForm();
-  }
+    this.feedbackservice.submitFeedback(this.feedbackcopy)
+        .subscribe(feedback => {
+          this.feedback = feedback; this.feedbackcopy = feedback;
+      })
+      setTimeout(this.feedbackFormDirective.resetForm(), 5000);
+    }
 
   onValueChanged(data?: any) {
     if (!this.feedbackForm) { return; }

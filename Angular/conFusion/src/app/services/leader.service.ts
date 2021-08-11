@@ -32,15 +32,4 @@ export class LeaderService {
     return this.http.get<Leader>(baseURL + 'leadership').pipe(map(leaders => leaders[0]))
     .pipe(catchError(this.processHTTPMsgService.handleError));
   }
-
-  putDish(leader: Leader): Observable<Leader> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
-    return this.http.put<Leader>(baseURL + 'leadership/' + leader.id, leader, httpOptions)
-      .pipe(catchError(this.processHTTPMsgService.handleError));
-
-  }
 }

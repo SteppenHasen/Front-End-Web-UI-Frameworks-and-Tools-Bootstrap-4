@@ -32,15 +32,5 @@ export class PromotionService {
     return this.http.get<Promotion>(baseURL + 'promotions').pipe(map(promotions => promotions[0]))
     .pipe(catchError(this.processHTTPMsgService.handleError));
   }
-  
-  putDish(promotion: Promotion): Observable<Promotion> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
-    return this.http.put<Promotion>(baseURL + 'promotions/' + promotion.id, promotion, httpOptions)
-      .pipe(catchError(this.processHTTPMsgService.handleError));
 
-  }
 }
