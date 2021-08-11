@@ -60,7 +60,7 @@
       <mat-card-content *ngIf="leaders">
         <mat-list *ngFor="let leader of leaders">
           <div fxFlex="1">
-            <img mat-card-image src={{leader.image}}>
+            <img mat-card-image src="{{ BaseURL + leader.image }}">
           </div>
           <div fxFlex="4"></div>
           <mat-list-item fxFlex="95">
